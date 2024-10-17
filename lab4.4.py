@@ -17,4 +17,3 @@ def find_expansion(dir_name, exp):
             if Path(path).is_dir(): stack.append(path)
     print(files)
 
-find_expansion('master', '.html')
