@@ -13,7 +13,7 @@ def find_expansion(dir_name, exp):
             if Path(path).is_file():
                 expansion = PurePath(path).suffix
                 if (expansion == exp):
-                    files.append(PurePath(path).stem)
+                    files.append(Path(PurePath(path).stem).resolve().as_posix())
             if Path(path).is_dir(): stack.append(path)
     print(files)
 
