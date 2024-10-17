@@ -16,4 +16,3 @@ def dir_tree(dir_name):
 
         indent = 4 * level * ' '
         print(indent.join(map(str, files)))
-dir_tree('master')
