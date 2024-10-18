@@ -12,7 +12,8 @@ def dir_tree(dir_name):
         for elem in elements:
             path = os.path.join(cur_dir, elem)
             if os.path.isdir(path): stack.append((path, level + 1))
-            if os.path.isfile(path): files += (elem,)
+            if os.path.isfile(path):
+                indent = (4 * level) * ' '
+                print(indent + elem)
 
-        indent = 4 * level * ' '
-        print(indent.join(map(str, files)))
+
