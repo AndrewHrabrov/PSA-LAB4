@@ -13,7 +13,8 @@ def find_expansion(dir_name, exp):
             if Path(path).is_file():
                 expansion = PurePath(path).suffix
                 if (expansion == exp):
-                    files.append(Path(PurePath(path).stem).resolve().as_posix())
+                    files.append(Path(PurePath(path)).resolve().as_posix())
             if Path(path).is_dir(): stack.append(path)
     print(files)
 
+find_expansion('master', '.html')
