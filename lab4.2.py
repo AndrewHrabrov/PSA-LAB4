@@ -1,9 +1,13 @@
 import os
+from os import listdir
+from os.path import abspath, isdir
+
 
 def file_n_folders(dir_name):
-    if not os.path.isdir(dir_name):
-        print(f"Каталог '{dir_name}' не существует.")
-        return 1
+   path = abspath(dir_name)
+   lsdirs = os.listdir(path)
+   files = tuple(f for f in lsdirs if os.path.isfile(path + '/' + f))
+   dirs = tuple(f for f in lsdirs if os.path.isdir(path + '/' + f))
+   return [files, dirs]
 
-    return tuple(os.listdir(os.path.abspath(dir_name)))
-
+print(file_n_folders('C:/Users/DrShtoppor/Documents/master'))
