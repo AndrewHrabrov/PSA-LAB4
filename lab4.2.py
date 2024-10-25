@@ -10,4 +10,3 @@ def file_n_folders(dir_name):
    dirs = tuple(f for f in lsdirs if os.path.isdir(path + '/' + f))
    return [files, dirs]
 
-print(file_n_folders('C:/Users/DrShtoppor/Documents/master'))
