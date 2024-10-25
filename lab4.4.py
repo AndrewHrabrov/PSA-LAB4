@@ -1,6 +1,5 @@
 from pathlib import Path, PurePath
 
-
 def find_expansion(dir_name, exp):
     dir_name = Path(dir_name).resolve()
     stack = [(dir_name)]
@@ -15,5 +14,5 @@ def find_expansion(dir_name, exp):
                 if (expansion == exp):
                     files.append(Path(PurePath(path)).resolve().as_posix())
             if Path(path).is_dir(): stack.append(path)
-    print(files)
+    return files
 
